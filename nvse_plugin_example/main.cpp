@@ -102,7 +102,9 @@ void MessageHandler(NVSEMessagingInterface::Message* msg)
 	case NVSEMessagingInterface::kMessage_DeleteGameName: break;
 	case NVSEMessagingInterface::kMessage_RenameGameName: break;
 	case NVSEMessagingInterface::kMessage_RenameNewGameName: break;
-	case NVSEMessagingInterface::kMessage_DeferredInit: break;
+	case NVSEMessagingInterface::kMessage_DeferredInit:
+		Console_Print("Hello, World!");
+		break;
 	case NVSEMessagingInterface::kMessage_ClearScriptDataCache: break;
 	case NVSEMessagingInterface::kMessage_MainGameLoop: break;
 	case NVSEMessagingInterface::kMessage_ScriptCompile: break;
@@ -220,10 +222,10 @@ bool NVSEPlugin_Load(NVSEInterface* nvse)
 	 **************************************************************************/
 
 	// Do NOT use this value when releasing your plugin; request your own opcode range.
-	UInt32 const examplePluginOpcodeBase = 0x2000;
+	//UInt32 const examplePluginOpcodeBase = 0x2000;
 	
 	 // register commands
-	nvse->SetOpcodeBase(examplePluginOpcodeBase);
+	//nvse->SetOpcodeBase(examplePluginOpcodeBase);
 	
 	/*************************
 	 * The hexadecimal Opcodes are written as comments to the left of their respective functions.
